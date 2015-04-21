@@ -1,6 +1,98 @@
+<!DOCTYPE>
+<html>
 <head>
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+	<style>
+	body{
+	background-image: url("./images/questionMark.png");
+    background-repeat: no-repeat;
+}
+
+</style>
 </head>
 <body>
-<h1>Under Construction</h1>
+
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+ 
+<script>
+ $(document).ready(function() {
+ 
+    $('.faq_question').click(function() {
+ 
+        if ($(this).parent().is('.open')){
+            $(this).closest('.faq').find('.faq_answer_container').animate({'height':'0'},500);
+            $(this).closest('.faq').removeClass('open');
+ 
+            }else{
+                var newHeight =$(this).closest('.faq').find('.faq_answer').height() +'px';
+                $(this).closest('.faq').find('.faq_answer_container').animate({'height':newHeight},500);
+                $(this).closest('.faq').addClass('open');
+            }
+ 
+    });
+ 
+});
+</script>
+<style>
+/*FAQS*/
+.faq_question {
+    margin: 0px;
+    padding: 25px 0px 8px 0px;
+    display: inline-block;
+    cursor: pointer;
+    font-weight: bold;
+    font-size:30px;
+}
+ 
+.faq_answer_container {
+    height: 0px;
+    overflow: hidden;
+    padding: 0px;
+    font-size:20px;
+}
+
+</style>
+ 
+<div class="faq_container">
+   <div class="faq">
+      <div class="faq_question">What are you using to develop this game?</div>
+           <div class="faq_answer_container">
+              <div class="faq_answer" >We are using HTML5 and phaser.io.</div>
+           </div>        
+    </div>
+ </div>
+<div class="faq_container">
+   <div class="faq">
+      <div class="faq_question">I have never heard of phaser.io, where can I get it?</div>
+           <div class="faq_answer_container">
+              <div class="faq_answer">The link is actually at <a href="http://phaser.io">phaser.io</a></div>
+           </div>        
+    </div>
+ </div>
+<div class="faq_container">
+   <div class="faq">
+      <div class="faq_question">Where is the repository so I can contribute?</div>
+           <div class="faq_answer_container">
+              <div class="faq_answer">The repo is on github at <a href = "https://github.com/mgiovenco/word-fury">https://github.com/mgiovenco/word-fury</a></div>
+           </div>        
+    </div>
+ </div>
+<div class="faq_container">
+   <div class="faq">
+      <div class="faq_question">Is this an open source project?</div>
+           <div class="faq_answer_container">
+              <div class="faq_answer">Yes, it is being released under a GPL license</div>
+           </div>        
+    </div>
+ </div>
+ <div class="faq_container">
+   <div class="faq">
+      <div class="faq_question">GPL, what is that?</div>
+           <div class="faq_answer_container">
+              <div class="faq_answer">The short answer is that it means that any derived works must also be released under the same license.<br>  For more information check out <a href = "http://en.wikipedia.org/wiki/GNU_General_Public_License">wikipedia</a></div>
+           </div>        
+    </div>
+ </div>
 </body>
 </html>
