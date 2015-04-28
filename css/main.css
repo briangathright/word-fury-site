@@ -8,6 +8,8 @@ body {
     padding-bottom: 40px;
 }
 
+body { padding-bottom: 0px; }
+
 /* Nav Bar */
 
 .github-ribbon {
