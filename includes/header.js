@@ -15,15 +15,11 @@ document.write('<nav role="navigation" class="navbar navbar-inverse navbar-custo
     <!-- Collection of nav links and other content for toggling -->\
     <div id="navbarCollapse" class="collapse navbar-collapse">\
         <ul class="nav navbar-nav">\
-            <li><a href="play.html">PLAY</a></li>\
+            <li><a href="./game/src/index.html">Play</a></li>\
+            <li><a href="contribute.html">Contribute</a></li>\
             <li><a href="documentation.html">Documentation</a></li>\
-            <li><a href="aboutUs.html">About Us</a></li>\
-            <li><a href="mission.html">Mission</a></li>\
-            <li><a href="related.html">Related Projects</a></li>\
-            <li><a href="https://github.com/mgiovenco/word-fury">Repo</a></li>\
-            <li><a href="https://groups.google.com/forum/#!forum/wordfury-users">Mailing List</a></li>\
-            <li><a href="https://github.com/mgiovenco/word-fury/issues">Issue Tracker</a></li>\
             <li><a href="faq.html">FAQ</a></li>\
+            <li><a href="aboutUs.html">About Us</a></li>\
         </ul>\
     </div>\
 </nav>\
