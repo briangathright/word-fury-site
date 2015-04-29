@@ -1,173 +1,156 @@
 <!DOCTYPE>
 <html>
 <head>
- <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/main.css">
     <title>FAQs</title>
-  <style>
-  body{
-  background-image: url("./images/questionMark.png");
-    background-repeat: no-repeat;
-}
-
-</style>
 </head>
 <body>
 <!-- import header -->
-<script src = "./includes/header.js"></script>
+<script src="./includes/header.js"></script>
 <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
- 
+
 <script>
- $(document).ready(function() {
- 
-    $('.faq_question').click(function() {
- 
-        if ($(this).parent().is('.open')){
-            $(this).closest('.faq').find('.faq_answer_container').animate({'height':'0'},500);
-            $(this).closest('.faq').removeClass('open');
- 
-            }else{
-                var newHeight =$(this).closest('.faq').find('.faq_answer').height() +'px';
-                $(this).closest('.faq').find('.faq_answer_container').animate({'height':newHeight},500);
+    $(document).ready(function () {
+
+        $('.faq_question').click(function () {
+
+            if ($(this).parent().is('.open')) {
+                $(this).closest('.faq').find('.faq_answer_container').animate({'height': '0'}, 500);
+                $(this).closest('.faq').removeClass('open');
+
+            } else {
+                var newHeight = $(this).closest('.faq').find('.faq_answer').height() + 'px';
+                $(this).closest('.faq').find('.faq_answer_container').animate({'height': newHeight}, 500);
                 $(this).closest('.faq').addClass('open');
             }
- 
+
+        });
+
     });
- 
-});
 </script>
 <style>
-/*FAQS*/
-.faq_question {
-    margin: 0px;
-    padding: 25px 0px 8px 0px;
-    display: inline-block;
-    cursor: pointer;
-    font-weight: bold;
-    font-size:30px;
-}
- 
-.faq_answer_container {
-    height: 0px;
-    overflow: hidden;
-    padding: 0px;
-    font-size:20px;
-}
+    /*FAQS*/
+    .faq_question {
+        margin: 0px;
+        padding: 25px 0px 8px 0px;
+        display: inline-block;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 18px;
+    }
+
+    .faq_answer_container {
+        height: 0px;
+        overflow: hidden;
+        padding: 0px;
+    }
 
 </style>
- 
-<div class="faq_container">
-   <div class="faq">
-      <div class="faq_question">What are you using to develop this game?</div>
-           <div class="faq_answer_container">
-              <div class="faq_answer" >We are using HTML5 and phaser.io.</div>
-           </div>        
+
+<div class="container">
+    <div class="container marketing">
+        <div class="faq_container">
+            <div class="faq">
+                <div class="faq_question">What are you using to develop this game?</div>
+                <div class="faq_answer_container">
+                    <div class="faq_answer">We are using HTML5 and phaser.io.</div>
+                </div>
+            </div>
+        </div>
+        <div class="faq_container">
+            <div class="faq">
+                <div class="faq_question">I have never heard of phaser.io, what is it?</div>
+                <div class="faq_answer_container">
+                    <div class="faq_answer">Phaser is an open source HTML5 framework for building games. We originally
+                        played around with different technologies, but one of our goals was to have this hosted on the
+                        website for users to play. Having the game built around HTML made this possible. Definitely
+                        checkout the <a href="http://phaser.io">Phaser site</a> to contribute or make your own game!</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="faq_container">
+            <div class="faq">
+                <div class="faq_question">Where is the repository so I can contribute?</div>
+                <div class="faq_answer_container">
+                    <div class="faq_answer">The code repository is hosted on <a href="https://github.com/mgiovenco/word-fury">our repo on GitHub</a>.  The best way to contribute is to fork the project, add in a new functionality or bug fix, and then create a new pull request so that the community can review.  It's also a good idea to join our <a href="https://groups.google.com/forum/#!forum/wordfury-users">Google group</a> where we do our communication.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="faq_container">
+            <div class="faq">
+                <div class="faq_question">Is this an open source project?</div>
+                <div class="faq_answer_container">
+                    <div class="faq_answer">Yes, it is being released under a General Public License (GPL).</div>
+                </div>
+            </div>
+        </div>
+        <div class="faq_container">
+            <div class="faq">
+                <div class="faq_question">Where are your developer guidelines and game instructions located?</div>
+                <div class="faq_answer_container">
+                    <div class="faq_answer">Both of these are located on the <a
+                            href="https://github.com/mgiovenco/word-fury#word-fury">README file</a> in the GitHub Repo.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="faq_container">
+            <div class="faq">
+                <div class="faq_question">Where is the download area?</div>
+                <div class="faq_answer_container">
+                    <div class="faq_answer">You can download the source code on our <a
+                            href="https://github.com/mgiovenco/word-fury">Github Repo</a>.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="faq_container">
+            <div class="faq">
+                <div class="faq_question">Where is the user manual?</div>
+                <div class="faq_answer_container">
+                    <div class="faq_answer"></a>The game is very simple to play. Simply type the falling words before
+                        they hit the bottom. For more in depth instructions, checkout the <a
+                                href="https://github.com/mgiovenco/word-fury#word-fury">README file</a> for more
+                        instructions.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="faq_container">
+            <div class="faq">
+                <div class="faq_question">What is the address of your mailing list?</div>
+                <div class="faq_answer_container">
+                    <div class="faq_answer">We communicate mainly through our <a href="https://groups.google.com/forum/#!forum/wordfury-users">Google Group</a>.  We found this gives the most visibility to conversations and allows people to opt out of the group when they please.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="faq_container">
+            <div class="faq">
+                <div class="faq_question">What issue tracker will you use?</div>
+                <div class="faq_answer_container">
+                    <div class="faq_answer">We use GitHub's built in issue tracker. We found it beneficial to have the
+                        code repository located in the same area as our issue tracker. You can find the issue tracker <a
+                                href="https://github.com/mgiovenco/word-fury/issues">here</a>.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="faq_container">
+            <div class="faq">
+                <div class="faq_question">Are you planning on expanding the game functionality?</div>
+                <div class="faq_answer_container">
+                    <div class="faq_answer">Absolutely! We have a tons of ideas for the game that we would like to add.
+                         And just so we are clear, we are always open to help and new ideas!
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
- </div>
-<div class="faq_container">
-   <div class="faq">
-      <div class="faq_question">I have never heard of phaser.io, where can I get it?</div>
-           <div class="faq_answer_container">
-              <div class="faq_answer">The link is actually at <a href="http://phaser.io">phaser.io</a></div>
-           </div>        
-    </div>
- </div>
-<div class="faq_container">
-   <div class="faq">
-      <div class="faq_question">Where is the repository so I can contribute?</div>
-           <div class="faq_answer_container">
-              <div class="faq_answer">The repo is on github at <a href = "https://github.com/mgiovenco/word-fury">https://github.com/mgiovenco/word-fury</a></div>
-           </div>        
-    </div>
- </div>
-<div class="faq_container">
-   <div class="faq">
-      <div class="faq_question">Is this an open source project?</div>
-           <div class="faq_answer_container">
-              <div class="faq_answer">Yes, it is being released under a GPL license</div>
-           </div>        
-    </div>
- </div>
- <div class="faq_container">
-   <div class="faq">
-      <div class="faq_question">GPL, what is that?</div>
-           <div class="faq_answer_container">
-              <div class="faq_answer">The short answer is that it means that any derived works must also be released under the same license.<br>  For more information check out <a href = "http://en.wikipedia.org/wiki/GNU_General_Public_License">wikipedia</a></div>
-           </div>        
-    </div>
- </div>
- <div class="faq_container">
-   <div class="faq">
-      <div class="faq_question">What website address will be the entry point for users/developers</div>
-           <div class="faq_answer_container">
-              <div class="faq_answer"><a href = "http://wordfury.org">wordfury.org</a></div>
-           </div>        
-    </div>
- </div>
- <div class="faq_container">
-   <div class="faq">
-      <div class="faq_question">Where are your developer guidelines/instructions located?</div>
-           <div class="faq_answer_container">
-              <div class="faq_answer">Both on the site and on GitHub</div>
-           </div>        
-    </div>
- </div>
- <div class="faq_container">
-   <div class="faq">
-      <div class="faq_question">Where is the download area?</div>
-           <div class="faq_answer_container">
-              <div class="faq_answer">The link in the top right corner of <a href ="http://wordfury.org">wordfury.org</a> will take you to the GitHub repo</div>
-           </div>        
-    </div>
- </div>
- <div class="faq_container">
-   <div class="faq">
-      <div class="faq_question">Where is the user manual?</div>
-           <div class="faq_answer_container">
-              <div class="faq_answer">On <a href = "http://wordfury.org">wordfury.org</a></div>
-           </div>        
-    </div>
- </div>
- <div class="faq_container">
-   <div class="faq">
-      <div class="faq_question">What version control software will you use?</div>
-           <div class="faq_answer_container">
-              <div class="faq_answer">Git</div>
-           </div>        
-    </div>
- </div>
- <div class="faq_container">
-   <div class="faq">
-      <div class="faq_question">What is the address of your mailing list?</div>
-           <div class="faq_answer_container">
-              <div class="faq_answer"><a href = "https://groups.google.com/forum/#!forum/wordfury-users">https://groups.google.com/forum/#!forum/wordfury-users</a></div>
-           </div>        
-    </div>
- </div>
- <div class="faq_container">
-   <div class="faq">
-      <div class="faq_question">What issue tracker will you use?</div>
-           <div class="faq_answer_container">
-              <div class="faq_answer">GitHub's built in issue tracker</div>
-           </div>        
-    </div>
- </div>
- <div class="faq_container">
-   <div class="faq">
-      <div class="faq_question">Are you planning on expanding the game functionality?</div>
-           <div class="faq_answer_container">
-              <div class="faq_answer">Yes, we have a dozen or so different implementations that we would like to add in as different levels, such as the letters in words being scrambled or spreading to increase difficulty, but we are always open to suggestions as well</div>
-           </div>        
-    </div>
- </div>
- <div class="faq_container">
-   <div class="faq">
-      <div class="faq_question">Are you the first ones to come up with this game idea?</div>
-           <div class="faq_answer_container">
-              <div class="faq_answer">There are several games out there that have the same basic idea and some similar functionalities, but our game is trying to combine all of the parts that we like from those games into 1 awesome game.</div>
-           </div>        
-    </div>
- </div>
+</div>
 </body>
 </html>
