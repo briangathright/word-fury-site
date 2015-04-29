@@ -1,52 +1,37 @@
-var BasicGame = {};
+/**
+ This file is part of WordFury.
 
-BasicGame.Boot = function (game) {
+    WordFury is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
 
-};
+    WordFury is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
 
-BasicGame.Boot.prototype = {
-
-    init: function () {
-
-        //  Unless you specifically know your game needs to support multi-touch I would recommend setting this to 1
-        this.input.maxPointers = 1;
-
-        //  Phaser will automatically pause if the browser tab the game is in loses focus. You can disable that here:
-        this.stage.disableVisibilityChange = true;
-
-        if (this.game.device.desktop)
-        {
-            //  If you have any desktop specific settings, they can go in here
-            this.scale.pageAlignHorizontally = true;
-        }
-        else
-        {
-            //  Same goes for mobile settings.
-            //  In this case we're saying "scale the game, no lower than 480x260 and no higher than 1024x768"
-            this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
-            this.scale.setMinMax(480, 260, 1024, 768);
-            this.scale.forceLandscape = true;
-            this.scale.pageAlignHorizontally = true;
-        }
-
-    },
-
-    preload: function () {
-
-        //  Here we load the assets required for our preloader (in this case a background and a loading bar)
+    You should have received a copy of the GNU General Public License
+    along with WordFury.  If not, see <http://www.gnu.org/licenses/>.
+    */
+var WordFury = {};
+WordFury.Boot = function(game){};
+WordFury.Boot.prototype = {
+    preload: function(){
+        // loading resources needed for preloader page
         this.load.bitmapFont('stack', 'fonts/shortStack.png', 'fonts/shortStack.xml');
         this.load.image('preloaderBackground', 'images/space.png');
         this.load.image('preloaderBar', 'images/preload.png');
         this.load.image('preloaderText', 'images/loadText.png');
-
     },
-
-    create: function () {
-
-        //  By this point the preloader assets have loaded to the cache, we've set the game settings
-        //  So now let's start the real preloader going
+    create: function(){
+        // setting the scale options
+        this.input.maxPointers = 1;
+        this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+        this.scale.pageAlignHorizontally = true;
+        this.scale.pageAlignVertically = true;
+        this.scale.setScreenSize(true);
+        // transition to Preloader state
         this.state.start('Preloader');
-
     }
-
 };

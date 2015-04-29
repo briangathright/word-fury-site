@@ -1,51 +1,56 @@
+/**
+ This file is part of WordFury.
 
-BasicGame.MainMenu = function (game) {
-	this.titleText = null;
-	this.music = null;
-	this.playButton = null;
+    WordFury is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
 
+    WordFury is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with WordFury.  If not, see <http://www.gnu.org/licenses/>.
+    */
+WordFury.MainMenu = function(game){
+	WordFury.MUSIC = null;
 };
 
-BasicGame.MainMenu.prototype = {
-
-	create: function () {
-
-		//	We've already preloaded our assets, so let's kick right into the Main Menu itself.
-		//	Here all we're doing is playing some music and adding a picture and button
-		//	Naturally I expect you to do something significantly better :)
-
-		this.background = this.game.add.sprite(0, 0, 'preloaderBackground');
-		this.background = this.game.add.tileSprite(0, 0, 1046, 768, 'preloaderBackground');
-		this.background.autoScroll(-200, 0);
-		
-		this.titleText = this.game.add.bitmapText(this.game.width/2, 150, 'stack', 'WordFury', 100);
-		this.titleText.updateText();
-		this.titleText.x = this.game.world.centerX - (this.titleText.textWidth * 0.5);
-		
-		this.music = this.game.add.audio('titleMusic', 1, true);
-		this.music.play();
-
-		//this.add.sprite(0, 0, 'titlepage');
-
-		this.playButton = this.game.add.button(this.game.width/2, 600, 'playButton', this.startGame, this, 'buttonOver', 'buttonOut', 'buttonOver');
-		this.playButton.anchor.setTo(0.5, 0.5);
-
+WordFury.MainMenu.prototype = {
+	create: function(){
+		// set the background and have it autoscroll
+		var background = this.add.sprite(0, 0, 'preloaderBackground');
+		background = this.add.tileSprite(0, 0, 640, 960, 'preloaderBackground');
+		background.autoScroll(-200, 0);
+		// add the title text
+		var titleText = this.add.bitmapText(WordFury.GAME_WIDTH/2, 150, 'stack', 'WordFury', 100);
+		titleText.updateText();
+		titleText.x = WordFury.GAME_WIDTH/2 - (titleText.textWidth * 0.5);
+		// add and play the music
+		WordFury.MUSIC = this.add.audio('titleMusic', 1, true);
+		WordFury.MUSIC.loop = true;
+		WordFury.MUSIC.play();
+		// add the play button
+		var playButton = this.add.button(WordFury.GAME_WIDTH/2, 600, 'playButton', this.startGame, this, 'buttonOver', 'buttonOut', 'buttonOver');
+		playButton.anchor.setTo(0.5, 0.5);
+		//var muteButton = this.add.button(WordFury.GAME_WIDTH/2, 700, 'muteButton', this.muteMusic, this, 'buttonOver', 'buttonOut', 'buttonOver');
+		//muteButton.anchor.setTo(0.5, 0.5);
 	},
-
-	update: function () {
-
-		//	Do some nice funky main menu effect here
-
-	},
-
-	startGame: function (pointer) {
-
-		//	Ok, the Play Button has been clicked or touched, so let's stop the music (otherwise it'll carry on playing)
-		//this.music.stop();
-
-		//	And start the actual game
+	startGame: function(){
+		// transition to the Game state 
+		WordFury.MUSIC.stop();
 		this.state.start('Game');
-
+	},
+	muteMusic: function(){
+		// if the music is muted, unmute it
+		if(WordFury.MUSIC.mute){
+			WordFury.MUSIC.mute = false;
+		}
+		// if the music isn;t muted, mute it
+		else{
+			WordFury.MUSIC.mute = true;
+		}
 	}
-
 };
