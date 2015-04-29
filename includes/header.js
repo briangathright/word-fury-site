@@ -17,7 +17,7 @@ document.write('<nav role="navigation" class="navbar navbar-inverse navbar-custo
         <ul class="nav navbar-nav">\
             <li><a href="./game/src/index.html">Play</a></li>\
             <li><a href="contribute.html">Contribute</a></li>\
-            <li><a href="documentation.html">Documentation</a></li>\
+            <li><a href="https://github.com/mgiovenco/word-fury/wiki">Documentation</a></li>\
             <li><a href="faq.html">FAQ</a></li>\
             <li><a href="aboutUs.html">About Us</a></li>\
         </ul>\
