@@ -30,13 +30,3 @@ body { padding-bottom: 0px; margin-bottom:0;}
     border-color: #252525;
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff222222', endColorstr='#ff111111', GradientType=0);
 }
-
-/* Footer */
-
-.footer-custom {
-    position: relative;
-    margin-top: -150px; /* negative value of footer height */
-    height: 150px;
-    clear:both;
-    padding-top:20px;
-}
