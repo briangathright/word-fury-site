@@ -1,0 +1,177 @@
+<!DOCTYPE>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <title>FAQs</title>
+</head>
+<body>
+<!-- import header -->
+<script src="./includes/header.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+
+        $('.faq_question').click(function () {
+
+            if ($(this).parent().is('.open')) {
+                $(this).closest('.faq').find('.faq_answer_container').animate({'height': '0'}, 500);
+                $(this).closest('.faq').removeClass('open');
+
+            } else {
+                var newHeight = $(this).closest('.faq').find('.faq_answer').height() + 'px';
+                $(this).closest('.faq').find('.faq_answer_container').animate({'height': newHeight}, 500);
+                $(this).closest('.faq').addClass('open');
+            }
+
+        });
+
+    });
+</script>
+<style>
+    /*FAQS*/
+    .faq_question {
+        margin: 0px;
+        padding: 25px 0px 8px 0px;
+        display: inline-block;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 18px;
+    }
+
+    .faq_answer_container {
+        height: 0px;
+        overflow: hidden;
+        padding: 0px;
+    }
+
+</style>
+
+<div class="container">
+    <div class="container marketing">
+        <div class="faq_container">
+            <div class="faq">
+                <div class="faq_question">What are you using to develop this game?</div>
+                <div class="faq_answer_container">
+                    <div class="faq_answer">We are using HTML5 and phaser.</div>
+                </div>
+            </div>
+        </div>
+        <div class="faq_container">
+            <div class="faq">
+                <div class="faq_question">I have never heard of phaser, what is it?</div>
+                <div class="faq_answer_container">
+                    <div class="faq_answer">Phaser is an open source HTML5 framework for building games. We originally
+                        played around with different technologies, but one of our goals was to have this hosted on the
+                        website for users to play. Having the game built around HTML made this possible. Definitely
+                        checkout the <a href="http://phaser.io">Phaser site</a> to contribute or make your own game!</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="faq_container">
+            <div class="faq">
+                <div class="faq_question">Where is the repository so I can contribute?</div>
+                <div class="faq_answer_container">
+                    <div class="faq_answer">The code repository is hosted on <a href="https://github.com/mgiovenco/word-fury">our repo on GitHub</a>.  The best way to contribute is to fork the project, add in a new functionality or bug fix, and then create a new pull request so that the community can review.  It's also a good idea to join our <a href="https://groups.google.com/forum/#!forum/wordfury-users">Google group</a> where we do our communication.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="faq_container">
+            <div class="faq">
+                <div class="faq_question">Is this an open source project?</div>
+                <div class="faq_answer_container">
+                    <div class="faq_answer">Yes, it is being released under a General Public License (GPL).</div>
+                </div>
+            </div>
+        </div>
+        <div class="faq_container">
+            <div class="faq">
+                <div class="faq_question">Where are your developer guidelines and instructions located?</div>
+                <div class="faq_answer_container">
+                    <div class="faq_answer">Both of these are located in the <a
+                            href="https://github.com/mgiovenco/word-fury/wiki/Developer-Documentation">developer documentation</a> in the GitHub Repo.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="faq_container">
+            <div class="faq">
+                <div class="faq_question">Where is the user manual?</div>
+                <div class="faq_answer_container">
+                    <div class="faq_answer"></a>The game is very simple to play. Simply type the falling words before
+                        they hit the bottom. For more in depth instructions, checkout the our <a
+                                href="https://github.com/mgiovenco/word-fury/wiki/User-Documentation">user documentation</a> for more
+                        instructions.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="faq_container">
+            <div class="faq">
+                <div class="faq_question">Where is the download area?</div>
+                <div class="faq_answer_container">
+                    <div class="faq_answer">You can download the source code on our <a
+                            href="https://github.com/mgiovenco/word-fury">Github Repo</a>.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="faq_container">
+            <div class="faq">
+                <div class="faq_question">How do I know what the current release version?</div>
+                <div class="faq_answer_container">
+                    <div class="faq_answer">We maintain release information in our <a
+                            href="https://github.com/mgiovenco/word-fury/blob/master/README.md">README file</a> on GitHub.
+                        In addition, we create lightweight tags on the actual branch for major release versions.  You can see the tags by checking out
+                        the branch and running the "git tag" command.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="faq_container">
+            <div class="faq">
+                <div class="faq_question">What is the address of your mailing list?</div>
+                <div class="faq_answer_container">
+                    <div class="faq_answer">We communicate mainly through our <a href="https://groups.google.com/forum/#!forum/wordfury-users">Google Group</a>.  We found this gives the most visibility to conversations and allows people to opt out of the group when they please.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="faq_container">
+            <div class="faq">
+                <div class="faq_question">What issue tracker will you use?</div>
+                <div class="faq_answer_container">
+                    <div class="faq_answer">We use GitHub's built in issue tracker. We found it beneficial to have the
+                        code repository located in the same area as our issue tracker. You can find the issue tracker <a
+                                href="https://github.com/mgiovenco/word-fury/issues">here</a>.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="faq_container">
+            <div class="faq">
+                <div class="faq_question">Are you planning on expanding the game functionality?</div>
+                <div class="faq_answer_container">
+                    <div class="faq_answer">Absolutely! We have a tons of ideas for the game that we would like to add.
+                         And just so we are clear, we are always open to help and new ideas!
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- FOOTER -->
+<div style="bottom:0;">
+    <footer>
+        <hr>
+        <p style="text-align: center">
+            <a href="terms.html">Terms</a> | <a href="#">Back to top</a>
+        <p>
+    </footer>
+</div>
+</body>
+</html>
